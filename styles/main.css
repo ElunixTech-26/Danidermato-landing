@@ -1,0 +1,175 @@
+/* ================================
+   Elunix – Main CSS
+   Base para Landing Page Danidermato
+   ================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-primary: 'DM Sans', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+
+  /* Colors – Brand */
+  --color-gold: #D6B46A;        /* dourado principal */
+  --color-gold-soft: #E9D39A;   /* dourado claro */
+  --color-nude: #E6C3A5;        /* nude */
+  --color-beige: #F4EDE4;       /* fundo claro */
+  --color-brown-soft: #B89478;  /* apoio elegante */
+
+  /* Colors – Neutral */
+  --color-black: #111111;
+  --color-dark: #2B2B2B;
+  --color-gray: #6F6F6F;
+  --color-light-gray: #CFCFCF;
+  --color-white: #FFFFFF;
+
+  /* Feedback */
+  --color-success: #4CAF50;
+  --color-warning: #FFB020;
+  --color-error: #E53935;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+
+  /* Shadow */
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-beige);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  color: var(--color-black);
+  line-height: 1.3;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
+h3 { font-size: 1.6rem; }
+
+p {
+  font-size: 1rem;
+  color: var(--color-gray);
+}
+
+/* -- Buttons -- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gold-soft);
+  color: var(--color-black);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+/* -- Sections -- */
+.section {
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.section-light {
+  background-color: var(--color-beige);
+}
+
+.section-white {
+  background-color: var(--color-white);
+}
+
+
+/* Cards */
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.text-gold { color: var(--color-gold); }
+.text-muted { color: var(--color-gray); }
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+
+
+/* ANIMAÇÕES DE SCROLL REVEAL */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px); /* Começa 30px abaixo */
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); /* Curva de animação elegante */
+    will-change: opacity, transform; /* Otimização de performance */
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay para efeito Cascata */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; 
+}
