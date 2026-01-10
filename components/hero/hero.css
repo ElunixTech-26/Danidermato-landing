@@ -1,0 +1,162 @@
+.hero{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    padding-top: 2.5rem;
+
+    background: radial-gradient(
+        circle at 20% 30%,
+        #faf4ec 0%,
+        var(--color-beige) 35%,
+        #e6c3a5a6 65%,
+        #f3eadf 100%
+    );
+
+    z-index: 1;
+}
+
+.hero__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero__content{
+  max-width: 520px;
+}
+
+.hero__content h1{
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.hero__content p{
+  margin-top: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 1;
+}
+
+.hero__content button {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem; 
+  
+  background-color: var(--color-dark);
+  color: #fff;
+  
+  border-radius: 50px;
+  border: 1px solid transparent;
+  
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-primary); 
+  letter-spacing: 0.5px;
+  
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  box-shadow: var(--shadow-medium); 
+}
+
+.hero__content button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.hero__content button:hover {
+  transform: translateY(-3px); 
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  background-color: var(--color-gold, #c5a47e); 
+}
+
+.hero__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.visual-wrapper {
+    position: relative;
+    width: 360px;
+    aspect-ratio: 3 / 4;
+}
+
+.visual-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 180px 180px 60px 60px;
+    box-shadow: var(--shadow-medium);
+    z-index: 2;
+    position: relative;
+}
+
+.visual-wrapper {
+    animation: floatImage 8s ease-in-out infinite;
+}
+
+/* animação da foto */
+
+@keyframes floatImage {
+    
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);   
+    }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+
+  .hero {
+      padding-top: 4rem; 
+      padding-bottom: 4rem;
+      min-height: auto; /* Evita buracos gigantes em celulares altos */
+      margin-top: 2.5rem;
+    }
+    
+    .hero__layout {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 3rem;
+    }
+
+    .hero__content{
+      margin: 0 auto;
+    }
+  
+    .hero__content h1 {
+      font-size: clamp(2rem, 7vw, 2.6rem);
+    }
+
+    .hero__content p {
+      font-size: 1rem;
+    }
+
+    .hero__content button {
+      width: 100%;
+      text-align: center;
+    }
+
+    .visual-wrapper {
+      width: 280px;
+      margin: 0 auto;
+    }
+
+    .visual-wrapper {
+      animation-duration: 10s;
+    }
+
+}

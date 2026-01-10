@@ -15,10 +15,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
             css.href = `/components/${name}/${name}.css`;
             document.head.appendChild(css);
 
-            const js = document.createElement('script');
-            js.src = `/components/${name}/${name}.js`;
-            js.defer = true;
-            document.body.appendChild(js);
+            // console.log(`Componente ${name} tem js? ${el.dataset.hasJs}`);
+
+            // Componentes que terão Js, colocar data-has-js="true" no elemento
+            if (el.dataset.hasJs === "true") {
+                const js = document.createElement('script');
+                js.src = `/components/${name}/${name}.js`;
+                js.defer = true;
+                document.body.appendChild(js);
+            }
+
         } catch (err){
             console.error(`Erro ao carregar o componente: ${name}`, err);
         }
