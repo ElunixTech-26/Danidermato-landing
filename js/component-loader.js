@@ -10,12 +10,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const html = await fetch(`/components/${name}/${name}.html`);
             el.innerHTML = await html.text();
 
+            // Inicializa a animação de scroll reveal após carregar o componente
+            if (typeof initScrollReveal === 'function') {
+                initScrollReveal(); 
+            }
+
             const css = document.createElement("link");
             css.rel = "stylesheet";
             css.href = `/components/${name}/${name}.css`;
             document.head.appendChild(css);
-
-            // console.log(`Componente ${name} tem js? ${el.dataset.hasJs}`);
 
             // Componentes que terão Js, colocar data-has-js="true" no elemento
             if (el.dataset.hasJs === "true") {

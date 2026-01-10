@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () =>{
-    initScrollReveal();
+     initScrollReveal();
 });
 
 // animação dos elementos aparecendo na página.

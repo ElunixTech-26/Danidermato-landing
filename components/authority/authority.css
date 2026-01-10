@@ -1,0 +1,83 @@
+.authority-section {
+    background-color: #fff;
+    padding: 4rem 2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05); 
+}
+
+.authority-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.authority-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-secondary, serif);
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--color-gold); 
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-family: var(--font-primary, sans-serif);
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.stat-line {
+    width: 1px;
+    height: 40px;
+    background-color: var(--color-gold-soft);
+    opacity: 0.5;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .authority-stats {
+        gap: 2rem;
+    }
+
+    .stat-line {
+        display: none; /* Remove linhas no mobile */
+    }
+
+    .stat-item {
+        width: 100%; 
+        margin-bottom: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .logos-wrapper {
+        gap: 1.5rem;
+    }
+
+    .auth-logo {
+        height: 35px;
+    }
+}
