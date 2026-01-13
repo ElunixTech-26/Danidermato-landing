@@ -53,6 +53,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 10px;
   width: 100%;
   overflow-x: hidden;
 }
@@ -168,8 +169,3 @@ p {
 .delay-100 { transition-delay: 0.1s; }
 .delay-200 { transition-delay: 0.2s; }
 .delay-300 { transition-delay: 0.3s; }
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px; 
-}
