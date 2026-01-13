@@ -1,0 +1,210 @@
+.testimonials-section {
+    padding: 6rem 0; 
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.testimonials-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.testimonials-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* --- O TRILHO DO SCROLL --- */
+.testimonials-track {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto; 
+    padding-bottom: 2rem;
+    padding-left: 1rem; 
+    padding-right: 1rem;
+    scroll-behavior: smooth;
+    
+    /* Configuração do Snap (Grudar) */
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    
+    /* Esconder a barra de rolagem */
+    scrollbar-width: none; /* Firefox */
+}
+
+.testimonials-track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* --- O CARD --- */
+.testimonial-card {
+    flex: 0 0 350px;
+    scroll-snap-align: start;
+    
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px); 
+}
+
+/* --- HEADER DO CARD --- */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-gold-soft);
+}
+
+.avatar-placeholder {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--color-gold-soft);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: var(--font-secondary);
+}
+
+.user-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin: 0;
+}
+
+.procedure-tag {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stars {
+    color: var(--color-gold);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+/* --- O TEXTO --- */
+.quote {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+    position: relative;
+}
+
+/* Aspas decorativas */
+.quote::before {
+    content: '“';
+    font-family: serif;
+    font-size: 4rem;
+    color: var(--color-gold);
+    opacity: 0.2;
+    position: absolute;
+    top: -30px;
+    left: -10px;
+    pointer-events: none;
+}
+
+/* --- RODAPÉ / INDICADOR --- */
+.scroll-indicator {
+    text-align: center;
+    margin-top: 1rem;
+    opacity: 0.6;
+}
+
+.drag-text {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+}
+
+.testimonials-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* ESTILO DAS SETAS */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); 
+    
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    color: var(--color-dark);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background-color: var(--color-gold);
+    color: #fff;
+    border-color: var(--color-gold);
+    transform: translateY(-50%) scale(1.1); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.nav-arrow.prev {
+    left: -24px; 
+}
+
+.nav-arrow.next {
+    right: -24px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .testimonial-card {
+        flex: 0 0 85vw; 
+        scroll-snap-align: center; 
+    }
+    
+    .testimonials-track {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .nav-arrow {
+        display: none; 
+    }
+    
+}
