@@ -195,25 +195,39 @@
 
 /* Animação botão hamburger */
 
-/* 1. A linha de cima gira e desce */
+/* A linha de cima gira e desce */
 .menu-toggle.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
     background-color: var(--color-gold);
 }
 
-/* 2. A linha do meio desaparece */
+/* A linha do meio desaparece */
 .menu-toggle.active span:nth-child(2) {
     opacity: 0;
-    transform: translateX(-10px); /* Efeito de sair deslizando */
+    transform: translateX(-10px);
 }
 
-/* 3. A linha de baixo gira e sobe */
+/* A linha de baixo gira e sobe */
 .menu-toggle.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
     background-color: var(--color-gold);
 }
 /* end animação reg */
 
+/* Tablet */
+@media (max-width: 1100px) {
+   .div-contact .btn{
+        padding: 0.3rem .5rem;
+        text-align: center;
+        margin-left: 1.2rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .service-card {
+        flex: 0 0 320px; 
+    }
+}
 
 /* Responsividade */
 @media (max-width: 768px){
