@@ -28,6 +28,7 @@
 
 .hero__content{
   max-width: 520px;
+  margin-top: 2.5rem;
 }
 
 .hero__content h1{
@@ -45,7 +46,7 @@
 }
 
 .hero__content button {
-  margin-top: 2rem;
+  margin: 1rem 0;
   padding: 1rem 2.5rem; 
   
   background-color: var(--color-dark);

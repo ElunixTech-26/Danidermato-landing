@@ -15,7 +15,6 @@
     margin-bottom: 3rem;
 }
 
-/* --- O TRILHO DO SCROLL --- */
 .testimonials-track {
     display: flex;
     gap: 2rem;
@@ -25,11 +24,10 @@
     padding-right: 1rem;
     scroll-behavior: smooth;
     
-    /* Configuração do Snap (Grudar) */
+    /* Grudar */
     scroll-snap-type: x mandatory; 
     -webkit-overflow-scrolling: touch; 
     
-    /* Esconder a barra de rolagem */
     scrollbar-width: none; /* Firefox */
 }
 
@@ -37,9 +35,8 @@
     display: none; /* Chrome/Safari */
 }
 
-/* --- O CARD --- */
 .testimonial-card {
-    flex: 0 0 350px;
+    flex: 0 0 365px;
     scroll-snap-align: start;
     
     background: #fff;
@@ -54,7 +51,6 @@
     transform: translateY(-5px); 
 }
 
-/* --- HEADER DO CARD --- */
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -65,7 +61,7 @@
 .user-info {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: .6rem;
 }
 
 .user-avatar {
@@ -97,19 +93,35 @@
 }
 
 .procedure-tag {
-    font-size: 0.75rem;
+    font-size: 0.63rem;
     color: #888;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-.stars {
-    color: var(--color-gold);
-    font-size: 1.2rem;
-    letter-spacing: 2px;
+.rating-badge {
+    background: #fff; 
+    border: 1px solid var(--color-gold);
+    color: var(--color-dark);
+    padding: 4px 10px;
+    border-radius: 20px; 
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    margin-left: .4rem;
 }
 
-/* --- O TEXTO --- */
+.star-icon {
+    color: var(--color-gold);
+    font-size: 1rem;
+    position: relative;
+    top: -1px; 
+}
+
 .quote {
     font-size: 0.95rem;
     line-height: 1.6;
@@ -118,7 +130,6 @@
     position: relative;
 }
 
-/* Aspas decorativas */
 .quote::before {
     content: '“';
     font-family: serif;
@@ -131,7 +142,6 @@
     pointer-events: none;
 }
 
-/* --- RODAPÉ / INDICADOR --- */
 .scroll-indicator {
     text-align: center;
     margin-top: 1rem;
@@ -151,7 +161,6 @@
     align-items: center;
 }
 
-/* ESTILO DAS SETAS */
 .nav-arrow {
     position: absolute;
     top: 50%;

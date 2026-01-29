@@ -20,9 +20,8 @@
 }
 
 .footer-logo {
-    width: 140px;
-    margin-bottom: 1.5rem;
-    opacity: 0.8; 
+    width: 240px;
+    margin-bottom: .5rem;
 }
 
 .brand-col p {
@@ -81,7 +80,6 @@
     opacity: 1;
 }
 
-/* --- RODAPÉ LEGAL --- */
 .footer-bottom {
     border-top: 1px solid rgba(0,0,0,0.05);
     padding-top: 2rem;

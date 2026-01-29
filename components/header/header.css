@@ -18,7 +18,7 @@
     transition: all 0.3s ease;
 }
 
-/* Estado ROLAGEM (Quando desce a página) -- Classe scrolled feita no JavaScript */
+/* Estado ROLAGEM -- Classe scrolled feita no JavaScript */
 .header.scrolled {
     padding: 0.5rem 2rem; 
     height: 65px; 
@@ -31,7 +31,7 @@
 }
 
 .header.scrolled .dr-title {
-    display: none; /* esconder o subtítulo ao rolar para limpar a visão */
+    display: none;
 }
 
 .logo-link{
@@ -40,12 +40,6 @@
     gap: 12px;
     text-decoration: none;
     color: inherit;
-}
-
-.logo-header{
-    width: 45px;
-    height: auto;
-    border-radius: 50%;
 }
 
 .logo-text{
