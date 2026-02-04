@@ -1,4 +1,3 @@
-
 // Função imediata para não poluir o escopo global
 (() => {
     const menuToggle = document.querySelector('.menu-toggle');

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () =>{
     initScrollReveal();
     carousel();
+    // handleMultiEntryService();
 });
 
 // animação dos elementos aparecendo na página.
@@ -50,5 +51,39 @@ function carousel(){
             track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         }
     });
-}
+};
 
+function handleMultiEntryService(){
+
+    const params = new URLSearchParams(window.location.search);
+
+    const service = params.get('tratamentos');
+
+    if(!service) return;
+
+    const serviceSection = document.querySelector('#tratamentos');
+    const track = document.querySelector('.services-track');
+    const targetCard = track?.querySelector(`[data-service="${service}"`);
+
+    if(!serviceSection || !track || !targetCard) return;
+
+    serviceSection.scrollIntoView({
+        behavior: 'smooth',
+        block: "center"
+    });
+    
+
+    setTimeout(() =>{
+
+        const cardWidth = targetCard.offsetWidth + 32;
+        const cardIndex = [...track.children].indexOf(targetCard);
+
+        track.scrollTo({
+            left: cardWidth * cardIndex,
+            behavior: 'smooth'
+        });
+
+        targetCard.classList.add('active-service');
+    }, 500);
+
+}

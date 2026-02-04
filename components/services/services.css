@@ -4,6 +4,10 @@
     overflow: hidden; 
 }
 
+#tratamentos {
+  scroll-margin-bottom: 220px; 
+}
+
 .services-section .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -39,30 +43,54 @@
     line-height: 1.6;
 }
 
-/* --- WRAPPER DO CARROSSEL --- */
-/* Segura o trilho e as setas no lugar */
+/* --- WRAPPER CARROSSEL --- */
 .services-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-/* --- O TRILHO (TRACK) --- */
+.active-service {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: -2px;
+  animation: shadowAnim 2.5s ease-in-out 5;
+  box-shadow: none;
+}
+
+
+@keyframes shadowAnim {
+  0% {
+    box-shadow:
+      0 0 0 rgba(214, 180, 106, 0),
+      0 0 0 rgba(214, 180, 106, 0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 30px rgba(214, 180, 106, 0.50),
+      0 0 60px rgba(214, 180, 106, 0.15);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 rgba(214, 180, 106, 0),
+      0 0 0 rgba(214, 180, 106, 0);
+  }
+}
+
+
+/* track */
 .services-track {
     display: flex;
-    gap: 2rem; /* Espaço entre cards */
+    gap: 2rem; 
     
-    /* Permite rolar horizontalmente */
     overflow-x: auto;
     
-    /* Padding generoso para a sombra do hover não ser cortada */
     padding: 2rem 1rem; 
     
-    /* Comportamento de rolagem */
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     
-    /* Esconde barra de rolagem */
     scrollbar-width: none; /* Firefox */
     width: 100%;
 }
@@ -90,7 +118,7 @@
     min-width: 260px; 
 
     max-height: 530px;
-    scroll-snap-align: start; 
+    scroll-snap-align: center; 
 }
 
 .service-card:hover {
@@ -236,15 +264,21 @@
     
     .services-track {
         padding: 2rem 1.5rem; 
-        gap: 1rem;
+        gap: 1.8rem;
     }
 
     .service-card {
-        flex: 0 0 85vw; 
-        min-width: auto;
+        flex: 0 0 75vw; 
+        /* min-width: auto; */
+        max-height: 450px;
     }
     
     .services-wrapper {
         width: 100%;
     }
+
+    #tratamentos {
+        scroll-margin-bottom: 540px;
+    }
+
 }

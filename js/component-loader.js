@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 document.body.appendChild(js);
             }
 
+            if(el.dataset.component == 'footer'){
+                handleMultiEntryService();
+            }
+
         } catch (err){
             console.error(`Erro ao carregar o componente: ${name}`, err);
         }
