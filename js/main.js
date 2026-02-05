@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     initScrollReveal();
     carousel();
     // handleMultiEntryService();
+    window.addEventListener('hashchange', handleInitialHashScroll);
 });
 
 // animação dos elementos aparecendo na página.
@@ -86,4 +87,17 @@ function handleMultiEntryService(){
         targetCard.classList.add('active-service');
     }, 500);
 
+}
+
+function handleInitialHashScroll(){
+    const hash = window.location.hash;
+    if(!hash) return;
+
+    const target = document.querySelector(hash);
+    if(!target) return;
+
+    target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
 }

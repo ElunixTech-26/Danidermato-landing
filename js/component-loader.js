@@ -1,9 +1,8 @@
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', async ()=>{
 
-    const components = document.querySelectorAll('[data-component]');
+    const components = [...document.querySelectorAll('[data-component]')];
 
-    components.forEach(async (el) => {
-
+    const loadComponent = async (el) => {
         const name = el.dataset.component;
 
         try{
@@ -27,13 +26,29 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 js.defer = true;
                 document.body.appendChild(js);
             }
-
-            if(el.dataset.component == 'footer'){
-                handleMultiEntryService();
-            }
-
         } catch (err){
             console.error(`Erro ao carregar o componente: ${name}`, err);
+        }
+    };
+
+    await Promise.all(components.map(loadComponent));
+
+    const runAfterLoad = (fn) => {
+        const run = () => requestAnimationFrame(() => requestAnimationFrame(fn));
+        if (document.readyState === 'complete') {
+            run();
+        } else {
+            window.addEventListener('load', run, { once: true });
+        }
+    };
+
+    runAfterLoad(() => {
+        if (typeof handleMultiEntryService === 'function') {
+            handleMultiEntryService();
+        }
+
+        if (typeof handleInitialHashScroll === 'function') {
+            handleInitialHashScroll();
         }
     });
 
