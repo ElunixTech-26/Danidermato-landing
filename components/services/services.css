@@ -4,10 +4,6 @@
     overflow: hidden; 
 }
 
-#tratamentos {
-  scroll-margin-bottom: 205px; 
-}
-
 .services-section .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -275,10 +271,6 @@
     
     .services-wrapper {
         width: 100%;
-    }
-
-    #tratamentos {
-        scroll-margin-bottom: 540px;
     }
 
 }

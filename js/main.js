@@ -68,9 +68,13 @@ function handleMultiEntryService(){
 
     if(!serviceSection || !track || !targetCard) return;
 
-    serviceSection.scrollIntoView({
-        behavior: 'smooth',
-        block: "center"
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const scrollOffset = isMobile ? 365 : 200;
+    const top = serviceSection.getBoundingClientRect().top + window.pageYOffset + scrollOffset;
+
+    window.scrollTo({
+        top,
+        behavior: 'smooth'
     });
     
 
